@@ -1,2 +1,5 @@
-theme: jekyll-theme-minimal
-title: Ella Fortenbery's Portfolio
+exclude:
+  - node_modules
+  - src
+  - package-lock.json
+  - vite.config.js
