@@ -36,6 +36,10 @@ a:hover { color: #c85d82; }
 .intro { min-height: 72vh; display: flex; flex-direction: column; justify-content: center; }
 .eyebrow { margin: 0 0 18px; }
 h1, h2 { margin: 0; font-weight: 400; letter-spacing: -.045em; }
+h3 { color: #c85d82; }
+h3::before { display: inline-block; width: 1.2em; height: 1.2em; margin-right: .35em; vertical-align: -.12em; background: center / contain no-repeat; content: ''; }
+#research h3:first-of-type::before { background-image: url('/icons/gpu.png'); filter: invert(43%) sepia(36%) saturate(904%) hue-rotate(286deg) brightness(89%) contrast(88%); }
+#research h3:nth-of-type(2)::before { background-image: url('/icons/headset.svg'); filter: invert(43%) sepia(36%) saturate(904%) hue-rotate(286deg) brightness(89%) contrast(88%); }
 h1 { font-size: clamp(3.5rem, 8vw, 7.5rem); line-height: .98; }
 h2 { font-size: clamp(2.2rem, 5vw, 4.5rem); }
 .intro > p:last-child, .placeholder-text { color: #765b66; }
