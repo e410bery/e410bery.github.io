@@ -1,5 +1,6 @@
 import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import Projects from './projects.jsx'
 import './styles.css'
 
 function App() {
@@ -64,7 +65,7 @@ function App() {
         <section className="section" id="projects">
           <p className="eyebrow">{String(++sectionNumber).padStart(2, '0')}</p>
           <h2>Projects</h2>
-          <div className="placeholder">Add projects here.</div>
+          <Projects />
         </section>
 
         {/* <section className="section" id="skills">
