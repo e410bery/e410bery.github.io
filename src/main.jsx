@@ -1,9 +1,11 @@
 import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import Projects from './projects.jsx'
 import './styles.css'
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  let sectionNumber = 0
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -21,7 +23,7 @@ function App() {
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#About Me">About Me</a>
           <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
+          {/* <a href="#skills">Skills</a> */}
           <a href="#research">Research</a>
         </nav>
         <button className="menu-button" type="button" aria-expanded={menuOpen} aria-controls="mobile-menu" onClick={() => setMenuOpen(!menuOpen)}>
@@ -34,7 +36,7 @@ function App() {
         <nav className="mobile-nav" aria-label="Mobile navigation">
           <a href="#About Me" onClick={closeMenu}>About Me</a>
           <a href="#projects" onClick={closeMenu}>Projects</a>
-          <a href="#skills" onClick={closeMenu}>Skills</a>
+          {/* <a href="#skills" onClick={closeMenu}>Skills</a> */}
           <a href="#research" onClick={closeMenu}>Research</a>
         </nav>
         <p className="sidebar-label">Contact Me</p>
@@ -53,7 +55,7 @@ function App() {
         </section>
 
         <section className="section" id="About Me">
-          <p className="eyebrow">01</p>
+          <p className="eyebrow">{String(++sectionNumber).padStart(2, '0')}</p>
           <h2>About Me</h2>
           <p className="placeholder-text">I am graduating from Duke University this May with a degree in Biomedical Engineering and Computer Science. I’m passionate about building technology at the intersection of software and healthcare. My long-term goal is to create immersive, interactive experiences that help people better understand health and medicine.</p>
           <p className="placeholder-text">In my free time I enjoy playing video games, sewing, and cuddling with my dogs.</p>
@@ -61,19 +63,19 @@ function App() {
         </section>
 
         <section className="section" id="projects">
-          <p className="eyebrow">02</p>
+          <p className="eyebrow">{String(++sectionNumber).padStart(2, '0')}</p>
           <h2>Projects</h2>
-          <div className="placeholder">Add projects here.</div>
+          <Projects />
         </section>
 
-        <section className="section" id="skills">
-          <p className="eyebrow">03</p>
+        {/* <section className="section" id="skills">
+          <p className="eyebrow">{String(++sectionNumber).padStart(2, '0')}</p>
           <h2>Skills</h2>
           <p className="placeholder-text">Add your skills here.</p>
-        </section>
+        </section> */}
 
         <section className="section" id="research">
-          <p className="eyebrow">04</p>
+          <p className="eyebrow">{String(++sectionNumber).padStart(2, '0')}</p>
           <h2>Research</h2>
           <h3>Outstanding Paper Award: Performance and portability of a production fluid–structure interaction solver across NVIDIA GPU generations</h3>
             <p><b>Skills: GPU computing · CUDA ecosystem · HPC · Slurm · MPI · NVIDIA Nsight Compute · Kernel profiling · Performance analysis · Data visualization · Technical writing</b></p>
