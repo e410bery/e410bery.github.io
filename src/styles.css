@@ -58,7 +58,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 4.5rem); }
 .project-images { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin-bottom: 20px; }
 .project-images:empty { display: none; }
 .project-images-row { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: minmax(0, 1fr); align-items: center; gap: 8px; }
-.project-image-link { display: block; min-width: 0; width: 100%; }
+.project-image-item { display: block; min-width: 0; width: 100%; }
 .project-image { display: block; width: 100%; height: auto; border-radius: 6px; }
 .project-paper-link { display: inline-block; margin-top: 20px; color: #a83f68; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .project-paper-link { padding: 0; border: 0; background: transparent; font-family: inherit; font-size: inherit; cursor: pointer; text-align: left; }

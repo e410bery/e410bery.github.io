@@ -35,13 +35,14 @@ const projects = [
     description:
       'Developing a modular wearable system intended to help address acute anxiety symptoms through devices positioned over targeted pressure points. The system uses Bluetooth-enabled microcontrollers to coordinate multiple wearable modules, combining embedded hardware, wireless communication, and human-centered medical device design.',
   },
-  { //link github repo after approved
-    title: 'Clinical Sleep Monitoring System',
-    image: 'project_supps/sleep_moniter_gui.png',
+  {
+    title: 'Patient Database',
+    repository: 'https://github.com/e410bery/patient-database',
+    image: '',
     paper: '',
     paperLabel: '',
     description:
-      'Developed a distributed client-server application for clinical sleep laboratory monitoring. The system includes separate patient-side and monitoring-station interfaces connected through a cloud-deployed Python Flask REST API and MongoDB database, enabling communication and centralized management of monitoring data across multiple clients.',
+      'Developed a server for managing patient lab results and requests. The system includes separate physician and lab technician interfaces connected through a cloud-deployed Python Flask REST API and MongoDB database, enabling communication and centralized management across multiple clients. The server has an automated email sending feature to notify physicians when new lab results are available.',
   },
   {
     title: 'Breast Tumor Detection from Mammograms',
@@ -176,12 +177,17 @@ export default function Projects() {
             <h3>{project.title}</h3>
             <div className={`project-images${project.imageLayout === 'row' ? ' project-images-row' : ''}`}>
               {(Array.isArray(project.image) ? project.image : [project.image]).filter(Boolean).map((image, index) => (
-                <a className="project-image-link" key={`${image}-${index}`} href={mediaUrl(image)} target="_blank" rel="noopener noreferrer" aria-label={`View image ${index + 1} for ${project.title}`}>
+                <div className="project-image-item" key={`${image}-${index}`}>
                   <img className="project-image" src={mediaUrl(image)} alt="" loading="lazy" />
-                </a>
+                </div>
               ))}
             </div>
             <p>{project.description}</p>
+            {project.repository && (
+              <a className="project-paper-link" href={project.repository} target="_blank" rel="noopener noreferrer">
+                View on GitHub
+              </a>
+            )}
             {project.paper && (
               <button className="project-paper-link" type="button" onClick={() => setActivePaper(project)}>
                 {project.paperLabel || 'Read paper'}
