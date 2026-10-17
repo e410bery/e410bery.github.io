@@ -167,7 +167,7 @@ export default function Projects() {
 
   return (
     <div className="project-carousel" role="region" aria-label="Project carousel">
-      <button className="project-arrow" type="button" aria-label="Previous project" aria-controls="project-track" disabled={!projectScroll.previous} onClick={() => scrollProjects(-1)}>
+      <button className="project-arrow project-arrow-previous" type="button" aria-label="Previous project" aria-controls="project-track" disabled={!projectScroll.previous} onClick={() => scrollProjects(-1)}>
         <span aria-hidden="true">&#8249;</span>
       </button>
       <div className="project-track" id="project-track" ref={projectsRef} tabIndex={0} aria-label="Projects; scroll to see more">
@@ -197,7 +197,7 @@ export default function Projects() {
           </article>
         ))}
       </div>
-      <button className="project-arrow" type="button" aria-label="Next project" aria-controls="project-track" disabled={!projectScroll.next} onClick={() => scrollProjects(1)}>
+      <button className="project-arrow project-arrow-next" type="button" aria-label="Next project" aria-controls="project-track" disabled={!projectScroll.next} onClick={() => scrollProjects(1)}>
         <span aria-hidden="true">&#8250;</span>
       </button>
       <dialog className="paper-dialog" ref={paperDialogRef} aria-labelledby="paper-title" onCancel={() => setActivePaper(null)} onClose={() => setActivePaper(null)}>
